@@ -237,14 +237,13 @@ void process_function(struct json_object* function) {
 
     printf("Function Name: %s\n", get_name(function));
     printf("Return Type: %s\n", get_return_type(function));
-    printf("Number of If Conditions: %d\n", if_count);
     print_param_names(function);
     print_param_types(function);
+    printf("Number of If Conditions: %d\n", if_count);
 
     printf("\n");
 }
 
-// Function to process functions from a JSON object
 // Function to process functions from a JSON object
 void process_functions_from_json(struct json_object* ext) {
     int array_len = json_object_array_length(ext);
@@ -318,10 +317,8 @@ void process_functions_from_json(struct json_object* ext) {
     }
 }
 
-
-
 int main() {
-    FILE* file = fopen("AST.json", "r");
+    FILE* file = fopen("data.json", "r");
     if (!file) {
         fprintf(stderr, "Failed to open file.\n");
         return 1;
@@ -339,10 +336,8 @@ int main() {
     free(file_content);
 
     struct json_object* ext = json_object_object_get(json, "ext");
-
-
+    
     process_functions_from_json(ext);
-
 
     json_object_put(json);
     return 0;
