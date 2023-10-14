@@ -321,7 +321,7 @@ void process_functions_from_json(struct json_object* ext) {
 
 
 int main() {
-    FILE* file = fopen("ASON.json", "r");
+    FILE* file = fopen("AST.json", "r");
     if (!file) {
         fprintf(stderr, "Failed to open file.\n");
         return 1;
