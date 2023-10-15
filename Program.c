@@ -502,9 +502,7 @@ void main()
     while (1)
     {
         money = Start();    //돈 투입받는 함수 호출
- 
         menu = Choice(money, count);        //메뉴 선택하는 함수 호출
- 
         Receipt(money, menu);        //영수증 출력하는 함수 호출
     }
  
