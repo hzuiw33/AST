@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS 
 #include <stdio.h>
 #include <ctype.h>        // 문자 종류를 판별하기 위함
 #include <string.h>        // strcpy를 사용하기 위함
