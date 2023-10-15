@@ -15,23 +15,23 @@ void Finish()
 {
     char choice;
  
-    printf("정말 자판기 프로그램을 종료하시겠습니까? (종료 : y, 계속 실행 : n)\n");
-    printf("입력 : ");
+    printf("Are you sure you want to exit the vending machine program? (End: y, Continue: n)\n");
+    printf("Input : ");
     scanf(" %c", &choice);
  
     if (choice == 'y' || choice == 'Y') {
-        printf("\n<< 자판기 프로그램을 종료합니다. 감사합니다. >>\n");
+        printf("\n<<Exit the vending machine program. Thank you.>>\n");
  
         
         exit(0);
     }
     else if (choice == 'n' || choice == 'N') {
-        printf("\n<< 자판기 프로그램을 계속 실행합니다. >>\n\n");
+        printf("\n<<Continue to run the vending machine program.>>\n\n");
  
         main();
     }
     else {
-        printf("\n<< 보기에 없는 키를 입력하셨습니다. 다시 선택해주십시오. >>\n\n");
+        printf("\n<< You have entered a key that is not in the view. Please select again. >>\n\n");
  
         
         Finish();
@@ -48,35 +48,35 @@ int Admin()
     for (i = 0; i < 51; i++) {
         printf("=");
     }
-    printf("\n\n관리자 모드로 진입하셨습니다.\n\n");
+    printf("\n\nYou have entered administrator mode.\n\n");
  
    
-    printf("======= 커피 재고 현황 =======\n");
-    printf("  1. Regular coffee : %d개\n  2. Special coffee : %d개\n  3. Sugar coffee   : %d개\n  4. Black coffee   : %d개\n", co1, co2, co3, co4);
+    printf("======= Coffee stock status =======\n");
+    printf("  1. Regular coffee : %d\n  2. Special coffee : %d\n  3. Sugar coffee   : %d\n  4. Black coffee   : %d\n", co1, co2, co3, co4);
     for (i = 0; i < 30; i++) {
         printf("=");
     }
  
     
-    printf("\n\n원하는 기능을 선택해주세요.\n");
-    printf("1. 커피 재고 채우기\n2. 커피 재고 빼기\n3. 총 매출 결산 확인\nx. 종료\n");
+    printf("\n\nPlease select the function you want..\n");
+    printf("1. coffee stocking\n2. Take out coffee stock\n3. Confirmation of the settlement of total\nx. end\n");
     
     
-    printf("\n------> 선택 : ");
+    printf("\n------> Choice : ");
     scanf(" %c", &select);
  
     switch (select) {
     case '1':
         
-        printf("\n<< 커피 재고를 채웁니다. 재고를 충전할 커피와 수량을 입력해주세요. >>\n\n");
-        printf("======== 메뉴 선택 ========\n");
+        printf("\n<< Fill the coffee stock. Please enter the coffee and quantity to recharge the stock. >>\n\n");
+        printf("======== Select Menu ========\n");
         printf("    1. Regular coffee\n    2. Special coffee\n    3. Sugar coffee\n    4. Black coffee\n");
         for (i = 0; i < 27; i++) {
             printf("=");
         }
-        printf("\n------> 재고를 채울 커피 번호 입력 : ");
+        printf("\n------> Enter coffee number to fill in stock: ");
         scanf("%d", &coffee);
-        printf("\n------> 재고를 채울 수량 입력 : ");
+        printf("\n------> Enter quantity to fill inventory: ");
         scanf("%d", &count);
  
         switch (coffee) {
@@ -101,15 +101,15 @@ int Admin()
         break;
     case '2':
        
-        printf("\n<< 커피 재고를 뺍니다. 재고를 뺄 커피와 수량을 입력해주세요. >>\n\n");
-        printf("======== 메뉴 선택 ========\n");
+        printf("\n<< Take the coffee out of stock. Please enter the coffee and quantity to remove the stock. >>\n\n");
+        printf("======== Select Menu ========\n");
         printf("    1. Regular coffee\n    2. Special coffee\n    3. Sugar coffee\n    4. Black coffee\n");
         for (i = 0; i < 27; i++) {
             printf("=");
         }
-        printf("\n------> 재고를 뺄 커피 번호 입력 : ");
+        printf("\n------> Enter coffee number to remove stock: ");
         scanf("%d", &coffee);
-        printf("\n------> 재고를 뺄 수량 입력 : ");
+        printf("\n------> Enter quantity to subtract inventory: ");
         scanf("%d", &count);
  
         switch (coffee) {
@@ -134,16 +134,16 @@ int Admin()
         break;
     case '3':
         
-        printf("\n<< 총 매출 : %d원 >>\n\n", sum);
+        printf("\n<< total sales : %d >>\n\n", sum);
  
-        printf("====== 커피 종류별 판매량 ======\n");
-        printf("  1.   Regular coffee   :   %d개\n  2.   Special coffee   :   %d개\n  3.   Sugar coffee     :   %d개\n  4.   Black coffee     :   %d개\n", co1_cnt, co2_cnt, co3_cnt, co4_cnt);
+        printf("====== Sales by coffee type ======\n");
+        printf("  1.   Regular coffee   :   %d\n  2.   Special coffee   :   %d\n  3.   Sugar coffee     :   %d\n  4.   Black coffee     :   %d\n", co1_cnt, co2_cnt, co3_cnt, co4_cnt);
         for (i = 0; i < 32; i++) {
             printf("=");
         }
  
-        printf("\n\n====== 커피 종류별 판매 금액 ======\n");
-        printf("  1.   Regular coffee   :   %d원\n  2.   Special coffee   :   %d원\n  3.   Sugar coffee     :   %d원\n  4.   Black coffee     :   %d원\n", co1_sum, co2_sum, co3_sum, co4_sum);
+        printf("\n\n====== Sales amount by coffee type ======\n");
+        printf("  1.   Regular coffee   :   %d\n  2.   Special coffee   :   %d\n  3.   Sugar coffee     :   %d\n  4.   Black coffee     :   %d\n", co1_sum, co2_sum, co3_sum, co4_sum);
         for (i = 0; i < 35; i++) {
             printf("=");
         }
@@ -151,7 +151,7 @@ int Admin()
         break;
     case 88:
     case 120:
-        printf("\n<< 관리자 모드를 종료합니다. >>\n\n");
+        printf("\n<< Exits administrator mode. >>\n\n");
         for (i = 0; i < 60; i++) {
             printf("=");
         }
@@ -161,7 +161,7 @@ int Admin()
         main();
         break;
     default:
-        printf("\n<< 보기에 없는 기능을 입력하셨습니다. >>\n\n");
+        printf("\n<< You have entered a feature that is not in the view. >>\n\n");
  
         
         Admin();
@@ -178,8 +178,8 @@ int Money(int temp)
  
     while (1)
     {
-        printf("\n돈을 투입하세요. (10원 단위로 1000원까지 투입 가능합니다.)\n(종료를 원하시면 'x'를 입력해주세요.)\n");
-        printf("투입 : ");
+        printf("\nPut your money in. (You can put in up to 1,000 won in units of 10 won.)\n(Please enter 'x' to exit.)\n");
+        printf("Input : ");
         
         if (scanf(" %d", &money) == 0)
         {
@@ -188,12 +188,12 @@ int Money(int temp)
             money = getchar();
             
             if (money == 'x' || money == 'X') {
-                printf("<< 투입하셨던 %d원을 받아가세요. >>\n\n", temp);
+                printf("<< Take the %d won you put in. >>\n\n", temp);
                 rewind(stdin);
                 Finish();
             }
             else {
-                printf("<< 잘못된 문자를 입력하셨습니다. >>\n\n");
+                printf("<< You have entered an invalid character. >>\n\n");
  
                 rewind(stdin);
                 main();
@@ -207,7 +207,7 @@ int Money(int temp)
  
         
         if (money % 10 != 0 || money > 1000) {
-            printf("\n<< 10원 단위로 돈을 투입해주셔야 합니다. 돈을 다시 투입해주세요. >>\n\n");
+            printf("\n<< You have to put in the money in units of 10 won. Please put the money back in. >>\n\n");
  
             continue;
         }
@@ -225,9 +225,9 @@ int Start()
  
     while (1)
     {
-        printf("안녕하세요.\n커피 자동 판매기입니다. (Ver 1.0)\n\n");
-        printf("======== 메뉴 & 가격 ========\n");
-        printf("  1. Regular coffee : 300원\n  2. Special coffee : 500원\n  3. Sugar coffee   : 300원\n  4. Black coffee   : 300원\n");
+        printf("Hello.\n This is a coffee machine. (Ver 1.0)\n\n");
+        printf("======== Menu & Price ========\n");
+        printf("  1. Regular coffee : 300won\n  2. Special coffee : 500won\n  3. Sugar coffee   : 300won\n  4. Black coffee   : 300won\n");
         for (i = 0; i < 29; i++) {
             printf("=");
         }
@@ -244,7 +244,7 @@ int Start()
 int Choice(int money, int count)
 {
     char menu = '1';
-    char available[] = "[선택가능]", Not_available[] = "[선택불가]";
+    char available[] = "[Selectable]", Not_available[] = "[Unselectable]";
     char co1_ok[11], co2_ok[11], co3_ok[11], co4_ok[11];
     int plus = 0, price = 0, i;
     
@@ -282,27 +282,27 @@ int Choice(int money, int count)
             strcpy(co4_ok, Not_available);
  
         if (count != 1)
-            printf("=== -> 투입 금액 : %d원\n\n", money);       
+            printf("=== -> Input amount: %d won\n\n", money);       
         else
-            printf("=== -> 잔액 : %d원\n\n", money);        
+            printf("=== -> Balance: %d won\n\n", money);        
  
         
-        printf("================ 메뉴 선택 ================\n");
-        printf("   1. Regular coffee : 300원  %s\n   2. Special coffee : 500원  %s\n", co1_ok, co2_ok);
-        printf("   3. Sugar coffee   : 300원  %s\n   4. Black coffee   : 300원  %s\n", co3_ok, co4_ok);
+        printf("================ Select Menu ================\n");
+        printf("   1. Regular coffee : 300won  %s\n   2. Special coffee : 500won  %s\n", co1_ok, co2_ok);
+        printf("   3. Sugar coffee   : 300won %s\n   4. Black coffee   : 300won  %s\n", co3_ok, co4_ok);
         for (i = 0; i < 43; i++) {
             printf("=");
         }
  
         
         if (money < 300) {
-            printf("\n투입하신 돈으로 커피를 살 수 없습니다.\n");
+            printf("\nYou cannot buy coffee with the money you put in.\n");
             plus = Money(money);
             money += plus;        
         }
  
-        printf("\n메뉴를 선택해주세요. (Regular coffee를 원한다면 '1'을 입력해주세요.)\n");
-        printf("===-> 입력 : ");
+        printf("\nPlease select a menu. (If you want regular coffee, please enter '1'.)\n");
+        printf("===-> Input : ");
        
         scanf(" %c", &menu);
         
@@ -353,7 +353,7 @@ int Choice(int money, int count)
  
             break;
         default:
-            printf("\n<< 보기에 없는 메뉴를 입력하셨습니다. >>\n\n");
+            printf("\n<< You have entered a menu that is not in the view. >>\n\n");
  
             Choice(money, count);
         }
@@ -385,22 +385,23 @@ void Receipt_fin(int money, char menu)
     sum += price;
     change = money - price;
  
-    printf("\n===== 거래 명세 영수증 =====\n");
-    printf("     입력한 돈 : %d원\n", money);
-    printf("     계산금액  : %d원\n", price);
-    printf("     거스름돈  : %d원\n", change);
+    printf("\n===== a receipt for a receipt =====\n");
+    printf("     money entered : %dwon\n", money);
+    printf("     Calculated amount  : %dwon\n", price);
+    printf("     Change  : %dwon\n", change);
     for (i = 0; i < 28; i++) {
         printf("=");
     }
     
    
     if (change >= 300) {
-        printf("\n\n잔액으로 커피를 더 구매하시겠습니까?\n(구매를 원하시면 'Y', 구매를 하지 않고 거스름돈 반환을 원하시면 'N'을 입력해주세요.)\n");
-        printf("입력 : ");
+        printf("\n\nWould you like to buy more coffee with the balance?\n (Please enter 'Y' if you want to purchase or 'N' if you want to return the change without purchasing.)\n");
+
+        printf("Input : ");
         scanf(" %c", &select);
  
         if (select == 'Y' || select == 'y') {
-            printf("\n<< 잔액으로 커피를 더 구매합니다. >>\n\n");
+            printf("\n<< Buy more coffee with the balance. >>\n\n");
  
             count = 1;
             menu = Choice(change, count);            
@@ -408,22 +409,22 @@ void Receipt_fin(int money, char menu)
             Receipt(change, menu);        
         }
         else if (select == 'N' || select == 'n') {
-            printf("\n<< 거스름돈 %d원을 반환해드렸습니다. 자판기의 처음 시작으로 돌아갑니다. >>\n\n", change);
+            printf("\n<< I have returned you the change of %d won. Return to the beginning of the vending machine. >>\n\n", change);
             
             
             rewind(stdin);
             main();
         }
         else {
-            printf("\n<< 보기에 없는 키를 입력하셨습니다. >>\n\n");
+            printf("\n<< You have entered a key that is not in the view. >>\n\n");
  
             
             Receipt_fin(money, price);
         }
     }
     else {               
-        printf("\n\n\n<< 자판기 프로그램이 종료되었습니다. 거스름돈 %d원을 받아가세요. >>\n", change);
-        printf("<< 이용해주셔서 감사합니다. >>");
+        printf("\n\n\n<< The vending machine program has ended. Take the change of %d won. >>\n", change);
+        printf("<< Thank you for using. >>");
     }
  
     printf("\n\n");
@@ -445,25 +446,25 @@ void Receipt(int money, char menu)
     change = money - price;
     
     if (change < 0) {        
-        printf("\n돈이 부족합니다. 추가로 돈을 더 투입하시면 커피를 구매하실 수 있습니다.\n");
-        printf("추가로 돈을 더 투입하시겠습니까?\n(추가로 돈 투입을 원하시면 'Y', 자판기 종료를 원하시면 'N'을 입력해주세요.)\n");
-        printf("입력 : ");
+        printf("\nMoney is scarce. You can buy coffee if you spend more money.\n");
+        printf("Would you like to put in more money?\n (Please enter 'Y' if you want additional money or 'N' if you want to end the vending machine.)\n");
+        printf("Input : ");
         scanf(" %c", &select);
  
         if (select == 'Y' || select == 'y') {        
-            printf("\n돈을 더 투입해주세요.\n");
-            printf("투입 : ");
+            printf("\nPlease put in more money.\n");
+            printf("Input : ");
             scanf("%d", &plus);
             money += plus;
         }
         else if (select == 'N' || select == 'n') {           
-            printf("\n<< 자판기 프로그램을 종료합니다. 투입했던 %d원을 받아가세요. >>\n<< 자판기를 이용해주셔서 감사합니다. >>\n\n", money);
+            printf("\n<<Exit the vending machine program. Take the %d won you put in. >>\n<Thank you for using the vending machine. >>\n\n", money);
  
             
             exit(0);
         }
         else {            
-            printf("<< 잘못된 문자를 입력하셨습니다. 투입했던 %d원을 받아가세요. >>\n<< 자판기 프로그램을 처음부터 다시 시작합니다. >>\n\n", money);
+            printf("<< You have entered an invalid character. Take the %d won you put in. >>\n<<< Restart the vending machine program from scratch. >>\n\n", money);
  
             
             rewind(stdin);
@@ -475,7 +476,7 @@ void Receipt(int money, char menu)
     else {        
        
         if (co1 < 1 || co2 < 1 || co3 < 1 || co4 < 1) {
-            printf("\n<< 죄송합니다. 재고가 없습니다. 다른 커피를 이용해주세요. >>\n");
+            printf("\n<< We are sorry, we are out of stock. Please use another coffee>>\n");
             for (i = 0; i < 60; i++) {
                 printf("=");
             }
@@ -498,9 +499,7 @@ void main()
     while (1)
     {
         money = Start();    
- 
         menu = Choice(money, count);        
- 
         Receipt(money, menu);        
     }
  
